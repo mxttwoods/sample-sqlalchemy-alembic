@@ -18,6 +18,7 @@ class Item(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)
     price = Column(Integer, nullable=True)
+    description = Column(String(), nullable=True)
 
 
 class Sale(Base):
