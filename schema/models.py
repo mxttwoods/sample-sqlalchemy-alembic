@@ -27,5 +27,14 @@ class Sale(Base):
     id = Column(Integer, primary_key=True)
     account_id = Column(Integer, ForeignKey('account.id'), nullable=False)
     item_id = Column(Integer, ForeignKey('item.id'), nullable=False)
+    test_fk_id = Column(Integer, ForeignKey('test_fk.id'), nullable=False)
+    paid_amount = Column(Integer, nullable=False)
+    sold_at = Column(DateTime, nullable=False, index=True)
+
+
+class TestFK(Base):
+    __tablename__ = 'test_fk'
+
+    id = Column(Integer, primary_key=True)
     paid_amount = Column(Integer, nullable=False)
     sold_at = Column(DateTime, nullable=False)
